@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salão da Sirlei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>💇‍♀️ Salão da Sirlei</h1>
+    <nav>
+      <button onclick="mostrar('home')">Início</button>
+      <button onclick="mostrar('servicos')">Serviços</button>
+      <button onclick="mostrar('agendar')">Agendar</button>
+      <button onclick="mostrar('contato')">Contato</button>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Página Inicial -->
+    <section id="home" class="secao">
+      <h2>Bem-vinda ao Salão da Sirlei 💅</h2>
+      <p>Transforme seu visual com cortes, coloração e cuidados feitos com carinho e profissionalismo.</p>
+      <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f" alt="Salão de Beleza" class="banner">
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="secao oculto">
+      <h2>💖 Nossos Serviços</h2>
+      <div class="servico">
+        <h3>Corte Feminino</h3>
+        <p>R$ 60,00</p>
+      </div>
+      <div class="servico">
+        <h3>Escova e Hidratação</h3>
+        <p>R$ 80,00</p>
+      </div>
+      <div class="servico">
+        <h3>Penteado Especial</h3>
+        <p>R$ 100,00</p>
+      </div>
+      <div class="servico">
+        <h3>Manicure e Pedicure</h3>
+        <p>R$ 45,00</p>
+      </div>
+    </section>
+
+    <!-- Agendamento -->
+    <section id="agendar" class="secao oculto">
+      <h2>📅 Agende seu horário</h2>
+      <form onsubmit="return agendar()">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="text" id="servico" placeholder="Serviço desejado" required>
+        <input type="date" id="data" required>
+        <input type="time" id="hora" required>
+        <button type="submit">Agendar</button>
+      </form>
+      <p id="confirmacao"></p>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="secao oculto">
+      <h2>📞 Contato</h2>
+      <p>📍 Endereço: Rua da Amizade, 456 - Parnaíba, PI</p>
+      <p>📱 WhatsApp: (86) 98888-8888</p>
+      <p>📧 Email: sirlei@salao.com</p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Salão da Sirlei | Desenvolvido para treino 💻</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
