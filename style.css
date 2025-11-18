@@ -1,81 +1,25 @@
-/* style.css - Tema profissional */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:'Poppins',sans-serif;
-  background: linear-gradient(180deg,#fde8ef 0%,#fff 60%);
-  color:#222;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  padding-bottom:80px;
+body {
+  font-family: Arial, sans-serif;
+  background: #20232a;
+  color: #fff;
+  margin: 0;
 }
-
-/* topo */
-.topo{
-  position:sticky;top:0;background:linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
-  backdrop-filter: blur(8px); padding:14px 18px; box-shadow:0 6px 18px rgba(0,0,0,0.06); z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
+header, main {
+  text-align: center;
+  margin: 20px;
 }
-.logo{color:#d62a6c;font-weight:700;font-size:1.15rem}
-.menu{display:flex;gap:10px;align-items:center}
-.menu .item{cursor:pointer;padding:8px 12px;border-radius:999px;font-weight:600;color:#444;transition:all .22s}
-.menu .item:hover{background:#ffd6e9;color:#d62a6c;transform:translateY(-2px)}
-
-/* container */
-.container{width:100%;max-width:1100px;margin:20px auto;padding:0 18px}
-
-/* banner topo */
-.banner-topo{display:flex;flex-direction:column;gap:14px;align-items:center;margin-top:6px}
-.foto-sirlei{width:92%;max-width:420px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.12);object-fit:cover}
-
-/* glass card */
-.vidro{
-  background:rgba(255,255,255,0.5);
-  border-radius:16px;padding:18px;
-  backdrop-filter:blur(10px);
-  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+input, button {
+  margin: 8px 0;
+  padding: 10px;
+  width: 200px;
+  box-sizing: border-box;
 }
-
-/* agenda box */
-.agenda-box{max-width:420px;margin:10px auto;text-align:center}
-.agenda-box h2{color:#d62a6c;font-weight:700;font-size:1.6rem}
-.agenda-box h3{color:#d62a6c;margin-top:6px;font-size:1.15rem}
-.agenda-box p{color:#555;margin-top:8px;line-height:1.4}
-
-/* whatsapp button */
-.botao-whats{display:inline-block;margin-top:12px;padding:12px 20px;border-radius:999px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(37,211,102,0.15);transition:transform .18s}
-.botao-whats:hover{transform:translateY(-4px)}
-
-/* seção secundária */
-.titulo-secundario{color:#d62a6c;font-size:1.4rem;margin:18px 0}
-
-/* cards de serviço */
-.lista-servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:10px}
-.card-servico{padding:16px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:transform .22s}
-.card-servico h3{font-size:1.05rem;margin-bottom:8px}
-.card-servico p{color:#d62a6c;font-weight:700}
-
-/* formulário */
-.form-box input, .form-box select, .form-box button{
-  width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);margin-top:10px;font-size:1rem;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background: #282c34;
+  padding: 20px;
+  border-radius: 8px;
 }
-.btn-agendar{background:#d62a6c;color:#fff;border:none;font-weight:700;cursor:pointer;box-shadow:0 10px 24px rgba(214,42,108,0.12);transition:transform .18s}
-.btn-agendar:hover{transform:translateY(-3px)}
-
-/* painel admin (telas admin/login) */
-.admin-header{background:#fff;padding:18px 16px;border-bottom:1px solid rgba(0,0,0,0.04)}
-.admin-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:18px}
-.panel{padding:14px;border-radius:12px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
-.list-item{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px;border-radius:8px}
-
-/* small */
-@media(max-width:900px){
-  .admin-grid{grid-template-columns:1fr}
-  .menu{display:none}
-}
-
-/* animações */
-.fade{animation:fadeIn .55s ease both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
