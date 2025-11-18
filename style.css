@@ -1,212 +1,81 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* style.css - Tema profissional */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(180deg,#fde8ef 0%,#fff 60%);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:80px;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #fcd8e6, #ffffff);
-  color: #333;
-  text-align: center;
-  padding-bottom: 60px;
+/* topo */
+.topo{
+  position:sticky;top:0;background:linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+  backdrop-filter: blur(8px); padding:14px 18px; box-shadow:0 6px 18px rgba(0,0,0,0.06); z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.logo{color:#d62a6c;font-weight:700;font-size:1.15rem}
+.menu{display:flex;gap:10px;align-items:center}
+.menu .item{cursor:pointer;padding:8px 12px;border-radius:999px;font-weight:600;color:#444;transition:all .22s}
+.menu .item:hover{background:#ffd6e9;color:#d62a6c;transform:translateY(-2px)}
+
+/* container */
+.container{width:100%;max-width:1100px;margin:20px auto;padding:0 18px}
+
+/* banner topo */
+.banner-topo{display:flex;flex-direction:column;gap:14px;align-items:center;margin-top:6px}
+.foto-sirlei{width:92%;max-width:420px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.12);object-fit:cover}
+
+/* glass card */
+.vidro{
+  background:rgba(255,255,255,0.5);
+  border-radius:16px;padding:18px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
 }
 
-/* ===========================
-   MENU SUPERIOR
-=========================== */
-.topo {
-  background: #ffffffa0;
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* agenda box */
+.agenda-box{max-width:420px;margin:10px auto;text-align:center}
+.agenda-box h2{color:#d62a6c;font-weight:700;font-size:1.6rem}
+.agenda-box h3{color:#d62a6c;margin-top:6px;font-size:1.15rem}
+.agenda-box p{color:#555;margin-top:8px;line-height:1.4}
+
+/* whatsapp button */
+.botao-whats{display:inline-block;margin-top:12px;padding:12px 20px;border-radius:999px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(37,211,102,0.15);transition:transform .18s}
+.botao-whats:hover{transform:translateY(-4px)}
+
+/* seção secundária */
+.titulo-secundario{color:#d62a6c;font-size:1.4rem;margin:18px 0}
+
+/* cards de serviço */
+.lista-servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:10px}
+.card-servico{padding:16px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:transform .22s}
+.card-servico h3{font-size:1.05rem;margin-bottom:8px}
+.card-servico p{color:#d62a6c;font-weight:700}
+
+/* formulário */
+.form-box input, .form-box select, .form-box button{
+  width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);margin-top:10px;font-size:1rem;
+}
+.btn-agendar{background:#d62a6c;color:#fff;border:none;font-weight:700;cursor:pointer;box-shadow:0 10px 24px rgba(214,42,108,0.12);transition:transform .18s}
+.btn-agendar:hover{transform:translateY(-3px)}
+
+/* painel admin (telas admin/login) */
+.admin-header{background:#fff;padding:18px 16px;border-bottom:1px solid rgba(0,0,0,0.04)}
+.admin-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:18px}
+.panel{padding:14px;border-radius:12px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
+.list-item{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px;border-radius:8px}
+
+/* small */
+@media(max-width:900px){
+  .admin-grid{grid-template-columns:1fr}
+  .menu{display:none}
 }
 
-.logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #d62a6c;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 8px;
-}
-
-.menu .item {
-  cursor: pointer;
-  font-weight: 600;
-  padding: 8px 15px;
-  border-radius: 20px;
-  color: #444;
-  transition: 0.3s;
-}
-
-.menu .item:hover {
-  background: #ffd6e9;
-  color: #d62a6c;
-}
-
-/* ===========================
-   VIDRO (GLASSMORPHISM)
-=========================== */
-.vidro {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ===========================
-   ANIMAÇÕES
-=========================== */
-.fade {
-  animation: fade 0.8s forwards;
-  opacity: 0;
-}
-
-@keyframes fade {
-  to { opacity: 1; }
-}
-
-.slide {
-  animation: slideUp 0.8s forwards;
-  opacity: 0;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(25px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* ===========================
-   FOTO
-=========================== */
-.foto-sirlei {
-  width: 92%;
-  max-width: 350px;
-  border-radius: 20px;
-  margin-top: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-/* ===========================
-   AGENDA BOX
-=========================== */
-.agenda-box {
-  margin: 25px auto;
-  padding: 25px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.agenda-box h2 {
-  color: #d62a6c;
-  font-size: 1.8rem;
-}
-
-.agenda-box h3 {
-  color: #d62a6c;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.botao-whats {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background: #25d366;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: 0.25s;
-}
-
-.botao-whats:hover {
-  background: #1ebe5d;
-  transform: scale(1.05);
-}
-
-/* ===========================
-   SERVIÇOS
-=========================== */
-.lista-servicos {
-  margin-top: 25px;
-}
-
-.card-servico {
-  width: 90%;
-  max-width: 420px;
-  margin: 15px auto;
-  padding: 20px;
-}
-
-/* ===========================
-   FORMULÁRIO
-=========================== */
-.form-box {
-  width: 90%;
-  max-width: 420px;
-  padding: 25px;
-  margin: auto;
-}
-
-form input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-.btn-agendar {
-  margin-top: 15px;
-  padding: 12px;
-  width: 100%;
-  background: #d62a6c;
-  border: none;
-  color: white;
-  font-weight: 700;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.btn-agendar:hover {
-  background: #b91f5c;
-  transform: scale(1.05);
-}
-
-/* ===========================
-   CONTATO
-=========================== */
-.contato-box {
-  width: 90%;
-  max-width: 420px;
-  padding: 25px;
-  margin: auto;
-}
-
-/* ===========================
-   RODAPÉ
-=========================== */
-footer {
-  margin-top: 50px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* OCULTO */
-.oculto {
-  display: none;
-}
+/* animações */
+.fade{animation:fadeIn .55s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
