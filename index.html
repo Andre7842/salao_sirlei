@@ -1,111 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Studio Sirlei Monteiro</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- MENU MODERNO -->
-  <header class="topo">
-    <h1 class="logo">Studio Sirlei Monteiro</h1>
+  <!-- Firebase -->
+  <!-- Copie exatamente o conteúdo de firebase.js aqui: -->
+  <script src="firebase.js"></script>
 
+  <header class="topo">
+    <div class="logo">Studio Sirlei Monteiro</div>
     <nav class="menu">
-      <a onclick="mostrar('home')" class="item">Início</a>
-      <a onclick="mostrar('servicos')" class="item">Serviços</a>
-      <a onclick="mostrar('agendar')" class="item">Agendar</a>
-      <a onclick="mostrar('contato')" class="item">Contato</a>
+      <div class="item" onclick="mostrar('home')">Início</div>
+      <div class="item" onclick="mostrar('servicos')">Serviços</div>
+      <div class="item" onclick="mostrar('agendar')">Agendar</div>
+      <div class="item" onclick="mostrar('contato')">Contato</div>
     </nav>
+    <div>
+      <a href="login.html" class="item" style="background:#222;color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none">Área do Dono</a>
+    </div>
   </header>
 
-  <!-- SEÇÃO PRINCIPAL (HOME) -->
-  <section id="home" class="secao fade">
-
-    <div class="banner-topo slide">
-      <img src="sua_imagem.jpg" class="foto-sirlei">
-    </div>
-
-    <div class="agenda-box vidro fade">
-      <h2>Agenda Aberta</h2>
-      <h3>Dezembro</h3>
-      <p>
-        Poucas vagas disponíveis!  
-        Garanta já seu horário.
-      </p>
-
-      <a href="https://wa.me/5513997315017" class="botao-whats">
-        📱 Agendar pelo WhatsApp
-      </a>
-    </div>
-  </section>
-
-
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="secao fade oculto">
-    <h2 class="titulo-secundario">Serviços</h2>
-
-    <div class="lista-servicos">
-      <div class="card-servico vidro slide">
-        <h3>Corte Feminino</h3>
-        <p>R$ 60,00</p>
+  <main class="container">
+    <section id="home" class="secao fade">
+      <div class="banner-topo">
+        <img src="sua_imagem.jpg" alt="Sirlei" class="foto-sirlei">
       </div>
 
-      <div class="card-servico vidro slide">
-        <h3>Escova + Hidratação</h3>
-        <p>R$ 80,00</p>
+      <div class="agenda-box vidro">
+        <h2>Agenda Aberta</h2>
+        <h3>Dezembro</h3>
+        <p>Poucas vagas — garanta já seu horário pelo WhatsApp.</p>
+        <a id="link-whats-principal" class="botao-whats" target="_blank" rel="noopener">📱 Agendar pelo WhatsApp</a>
       </div>
+    </section>
 
-      <div class="card-servico vidro slide">
-        <h3>Penteado Especial</h3>
-        <p>R$ 100,00</p>
+    <section id="servicos" class="secao fade oculto container">
+      <h2 class="titulo-secundario">Serviços</h2>
+      <div id="servicosSite" class="lista-servicos"></div>
+    </section>
+
+    <section id="agendar" class="secao fade oculto container">
+      <h2 class="titulo-secundario">Agendar Horário</h2>
+      <form id="formAgendamento" class="vidro form-box">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <select id="servicoSelect" required><option value="">Selecione um serviço</option></select>
+        <input type="date" id="data" required>
+        <input type="time" id="hora" required>
+        <button class="btn-agendar" type="submit">Agendar</button>
+      </form>
+      <p id="confirmacao" style="margin-top:12px;color:#2e7d32"></p>
+    </section>
+
+    <section id="contato" class="secao fade oculto container">
+      <h2 class="titulo-secundario">Contato</h2>
+      <div class="vidro panel">
+        <p>📍 Rua da Amizade, 456 - Parnaíba, PI</p>
+        <p>📱 WhatsApp: <a href="https://wa.me/5586988888888" target="_blank"> (86) 98888-8888</a></p>
+        <p>📧 sirlei@salao.com</p>
       </div>
+    </section>
+  </main>
 
-      <div class="card-servico vidro slide">
-        <h3>Manicure e Pedicure</h3>
-        <p>R$ 45,00</p>
-      </div>
-    </div>
-  </section>
+  <footer style="text-align:center;padding:18px 0;color:#777">© 2025 • Studio Sirlei Monteiro</footer>
 
-
-  <!-- AGENDAMENTO -->
-  <section id="agendar" class="secao fade oculto">
-    <h2 class="titulo-secundario">Agendar Horário</h2>
-
-    <form onsubmit="return agendar()" class="vidro form-box">
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="text" id="servico" placeholder="Serviço desejado" required>
-      <input type="date" id="data" required>
-      <input type="time" id="hora" required>
-
-      <button type="submit" class="btn-agendar">Agendar</button>
-    </form>
-
-    <p id="confirmacao"></p>
-  </section>
-
-
-  <!-- CONTATO -->
-  <section id="contato" class="secao fade oculto">
-    <div class="vidro contato-box">
-      <h2>Contato</h2>
-
-      <p>📍 Rua da Amizade, 456 - Parnaíba, PI</p>
-      <p>📱 WhatsApp: (86) 98888-8888</p>
-      <p>📧 Email: sirlei@salao.com</p>
-
-      <a href="https://wa.me/5586988888888" class="botao-whats">Abrir WhatsApp</a>
-    </div>
-  </section>
-
-
-  <footer>
-    © 2025 • Studio Sirlei Monteiro
-  </footer>
-
-<script src="script.js"></script>
+  <!-- Script cliente -->
+  <script src="script.js"></script>
 </body>
 </html>
