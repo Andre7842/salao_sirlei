@@ -1,42 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Login - Painel</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main>
+    <form id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </main>
   <script src="firebase.js"></script>
-
-  <div class="container" style="max-width:420px;margin-top:40px">
-    <div class="vidro panel">
-      <h2 style="text-align:center">Entrar - Área Administrativa</h2>
-
-      <input id="usuario" type="email" placeholder="Email do administrador" />
-      <input id="senha" type="password" placeholder="Senha" />
-      <button onclick="loginAdmin()" style="margin-top:12px;padding:10px 14px;background:#d62a6c;color:#fff;border:none;border-radius:10px">Entrar</button>
-
-      <p id="msg" style="color:red;margin-top:12px"></p>
-
-      <p style="margin-top:10px;font-size:.9rem;color:#444">
-        Se ainda não tem um usuário, crie em Firebase Console → Authentication → Users
-      </p>
-    </div>
-  </div>
-
-  <script>
-    async function loginAdmin(){
-      const email = document.getElementById('usuario').value;
-      const senha = document.getElementById('senha').value;
-      try {
-        await auth.signInWithEmailAndPassword(email, senha);
-        window.location.href = 'admin.html';
-      } catch (e) {
-        document.getElementById('msg').innerText = 'Erro no login. Verifique email/senha.';
-        console.error(e);
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
