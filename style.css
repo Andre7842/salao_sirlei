@@ -1,4 +1,4 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,70 +6,120 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #fce8ef, #ffffff);
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #fcd8e6, #ffffff);
   color: #333;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
 
 /* ===========================
-   FOTO + TÍTULO PRINCIPAL
+   MENU SUPERIOR
 =========================== */
-
-.banner-topo {
-  padding: 25px 20px;
+.topo {
+  background: #ffffffa0;
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #d62a6c;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.menu .item {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #444;
+  transition: 0.3s;
+}
+
+.menu .item:hover {
+  background: #ffd6e9;
+  color: #d62a6c;
+}
+
+/* ===========================
+   VIDRO (GLASSMORPHISM)
+=========================== */
+.vidro {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+.fade {
+  animation: fade 0.8s forwards;
+  opacity: 0;
+}
+
+@keyframes fade {
+  to { opacity: 1; }
+}
+
+.slide {
+  animation: slideUp 0.8s forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===========================
+   FOTO
+=========================== */
 .foto-sirlei {
-  width: 90%;
+  width: 92%;
   max-width: 350px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.titulo-site {
   margin-top: 15px;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #222;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 /* ===========================
-   CAIXA DA AGENDA
+   AGENDA BOX
 =========================== */
-
 .agenda-box {
-  margin: 30px auto;
+  margin: 25px auto;
   padding: 25px;
   width: 90%;
   max-width: 400px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .agenda-box h2 {
-  font-size: 1.8rem;
   color: #d62a6c;
+  font-size: 1.8rem;
 }
 
 .agenda-box h3 {
-  font-size: 1.4rem;
-  margin-top: 5px;
   color: #d62a6c;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
-.texto-agenda {
-  font-size: 1rem;
-  margin: 10px 0 15px 0;
-  color: #555;
-  line-height: 1.4;
-}
-
-/* BOTÃO WHATSAPP */
 .botao-whats {
   display: inline-block;
+  margin-top: 10px;
   padding: 12px 20px;
   background: #25d366;
   color: white;
@@ -83,68 +133,35 @@ body {
 
 .botao-whats:hover {
   background: #1ebe5d;
+  transform: scale(1.05);
 }
 
 /* ===========================
    SERVIÇOS
 =========================== */
-
-.servicos {
-  margin-top: 40px;
-  padding: 20px;
-}
-
-.titulo-secundario {
-  font-size: 1.8rem;
-  color: #d62a6c;
-  margin-bottom: 15px;
-}
-
 .lista-servicos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+  margin-top: 25px;
 }
 
 .card-servico {
   width: 90%;
   max-width: 420px;
-  background: #ffffff;
+  margin: 15px auto;
   padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card-servico:hover {
-  transform: scale(1.04);
-}
-
-.card-servico h3 {
-  font-size: 1.3rem;
-  color: #222;
-}
-
-.card-servico p {
-  margin-top: 5px;
-  font-size: 1.1rem;
-  color: #d62a6c;
-  font-weight: 600;
 }
 
 /* ===========================
-   FORMULÁRIO DE AGENDAMENTO
+   FORMULÁRIO
 =========================== */
-
-.agendamento {
-  margin-top: 40px;
-  padding: 20px;
+.form-box {
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  margin: auto;
 }
 
 form input {
-  width: 90%;
-  max-width: 350px;
+  width: 100%;
   padding: 12px;
   margin-top: 12px;
   border: 1px solid #bbb;
@@ -154,30 +171,42 @@ form input {
 
 .btn-agendar {
   margin-top: 15px;
-  padding: 12px 20px;
-  width: 90%;
-  max-width: 350px;
+  padding: 12px;
+  width: 100%;
   background: #d62a6c;
   border: none;
   color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 700;
   border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
 .btn-agendar:hover {
   background: #b91f5c;
+  transform: scale(1.05);
+}
+
+/* ===========================
+   CONTATO
+=========================== */
+.contato-box {
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  margin: auto;
 }
 
 /* ===========================
    RODAPÉ
 =========================== */
-
 footer {
-  margin-top: 40px;
-  padding: 20px;
+  margin-top: 50px;
   font-size: 0.9rem;
   color: #777;
+}
+
+/* OCULTO */
+.oculto {
+  display: none;
 }
