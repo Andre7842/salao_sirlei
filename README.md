@@ -1,19 +1,21 @@
+# Studio Sirlei Monteiro - Web App
 
-# Salão Sirlei
-
-Sistema simples para cadastro, login e administração de usuários, utilizando HTML, CSS, JS e Firebase.
+Arquivos de exemplo para um micro site / landing page que usa a foto enviada como imagem principal.
 
 ## Estrutura
-
-- index.html — Página inicial
-- login index.html — Tela de login
-- admin index.html — Painel do administrador
-- style.css — Estilos gerais
-- script.js — Funcionalidades básicas
-- script-admin.js — Funcionalidades para administração
-- firebase.js — Integração com Firebase
+- index.html           -> Página pública com a foto (agenda aberta)
+- login index.html     -> Página de login simples para administrador
+- admin index.html     -> Painel admin para ver/agendar (exemplo local)
+- firebase.js          -> Arquivo de configuração (placeholder)
+- script.js            -> Script da página pública (abrir WhatsApp, formulário)
+- script-admin.js      -> Script do painel admin (CRUD básico em localStorage)
+- style.css            -> Estilos gerais
+- README.md            -> Este arquivo
+- assets/hero.jpg      -> Imagem que você enviou
 
 ## Como usar
+1. Coloque `hero.jpg` em `assets/`.
+2. Abra `index.html` no navegador.
+3. Para testar administração, abra `login index.html`, faça login com as credenciais de exemplo (usuário: `admin`, senha: `senha123`) e você será redirecionado para `admin index.html`.
 
-1. Configure seu projeto Firebase em `firebase.js`.
-2. Abra `index.html` em seu navegador.
+Obs: `firebase.js` é um placeholder se você quiser conectar ao Firebase (adicione sua configuração lá).
