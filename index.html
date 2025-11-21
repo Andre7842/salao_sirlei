@@ -1,17 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Salão Sirlei</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Sirlei Monteiro — Agenda Aberta</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao Salão Sirlei</h1>
+  <header class="hero">
+    <img src="assets/hero.jpg" alt="Studio Sirlei Monteiro" class="hero-img">
+    <div class="hero-overlay">
+      <h1>Agenda Aberta</h1>
+      <h2>Dezembro</h2>
+      <p>Poucas vagas disponíveis! Agende o seu através do WhatsApp.</p>
+      <a id="whatsappBtn" class="btn" href="#">Agendar por WhatsApp</a>
+    </div>
   </header>
-  <main>
-    <a href="login index.html">Entrar</a>
+
+  <main class="container">
+    <section class="info">
+      <h3>Serviços</h3>
+      <ul>
+        <li>Corte e Penteado</li>
+        <li>Coloração</li>
+        <li>Tratamentos</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h3>Contato rápido</h3>
+      <form id="contactForm">
+        <label>Nome <input type="text" id="name" required></label>
+        <label>Serviço desejado <input type="text" id="service" required></label>
+        <label>Data preferida <input type="date" id="date"></label>
+        <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+      </form>
+    </section>
   </main>
+
+  <footer>
+    <p>© Studio Sirlei Monteiro</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
