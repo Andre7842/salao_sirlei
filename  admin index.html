@@ -1,31 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Painel Admin — Studio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Painel Admin</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="admin-header">
-    <h1>Painel Admin</h1>
-    <button id="logoutBtn" class="btn small">Sair</button>
+    <h2>Agendamentos</h2>
+    <a href="login index.html" class="btn danger">Sair</a>
   </header>
 
-  <main class="container admin-container">
-    <section class="admin-form">
-      <h2>Novo Agendamento</h2>
-      <form id="apptForm">
-        <label>Nome <input type="text" id="a_name" required></label>
-        <label>Serviço <input type="text" id="a_service" required></label>
-        <label>Data <input type="date" id="a_date"></label>
-        <button type="submit" class="btn">Salvar</button>
+  <main class="admin-container">
+    <section>
+      <h3>Novo Agendamento</h3>
+      <form id="form-admin">
+        <label>Nome</label>
+        <input type="text" id="a-nome" required />
+
+        <label>Data</label>
+        <input type="date" id="a-data" required />
+
+        <label>Serviço</label>
+        <input type="text" id="a-servico" required />
+
+        <button class="btn" type="submit">Adicionar</button>
       </form>
     </section>
 
     <section class="admin-list">
-      <h2>Agendamentos</h2>
-      <ul id="appts"></ul>
+      <h3>Lista</h3>
+      <ul id="lista"></ul>
     </section>
   </main>
 
