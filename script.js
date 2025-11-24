@@ -1,19 +1,12 @@
-document.getElementById('form-agendar').addEventListener('submit', function(e){
-e.preventDefault();
+function agendar() {
+    const nome = document.getElementById('nome').value;
+    const data = document.getElementById('data').value;
+    const retorno = document.getElementById('retorno');
 
-const nome = document.getElementById('nome').value;
-const data = document.getElementById('data').value;
-const servico = document.getElementById('servico').value;
+    if (!nome || !data) {
+        retorno.innerText = "Preencha todos os campos!";
+        return;
+    }
 
-if(!nome || !data || !servico){ alert("Preencha todos os campos."); return; }
-
-const horario = { nome, data, servico };
-
-let lista = JSON.parse(localStorage.getItem('agendamentos')) || [];
-lista.push(horario);
-localStorage.setItem('agendamentos', JSON.stringify(lista));
-
-alert("Agendamento enviado com sucesso!");
-
-document.getElementById('form-agendar').reset();
-});
+    retorno.innerText = `Agendamento confirmado para ${nome} em ${new Date(data).toLocaleString()}`;
+}
