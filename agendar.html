@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agendar — Salão Sirlei</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">Salão Sirlei</a>
+    <button class="nav-toggle" aria-controls="menu" aria-expanded="false">☰</button>
+    <ul id="menu" class="nav-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="services.html">Serviços</a></li>
+      <li><a href="agendar.html">Agendar</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Agende Seu Horário</h1>
+
+    <form id="bookingForm" class="booking-form" onsubmit="return false;">
+      <label for="name">Seu nome</label>
+      <input id="name" name="name" required>
+
+      <label for="phone">Telefone (WhatsApp)</label>
+      <input id="phone" name="phone" required placeholder="(99) 9XXXX-XXXX">
+
+      <label for="service">Serviço</label>
+      <select id="service" required>
+        <option value="">Selecione...</option>
+        <option value="Corte">Corte — R$45</option>
+        <option value="Coloração">Coloração — a partir de R$120</option>
+        <option value="Esmaltação">Esmaltação em Gel — R$70</option>
+      </select>
+
+      <label for="datetime">Data e hora</label>
+      <input id="datetime" type="datetime-local" required>
+
+      <label for="notes">Observações (opcional)</label>
+      <textarea id="notes" rows="3"></textarea>
+
+      <div class="form-actions">
+        <button class="btn" onclick="saveBooking()">Confirmar agendamento</button>
+        <button class="btn-outline" onclick="clearForm()">Limpar</button>
+      </div>
+
+      <p id="formMsg" class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Salão Sirlei</strong><br>
+      Rua Exemplo, 123 — Centro<br>
+      CEP 00000-000 — Cidade/UF
+    </div>
+    <div>
+      <small>© 2025 Salão Sirlei</small>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

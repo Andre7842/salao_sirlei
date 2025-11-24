@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Salão Sirlei</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">Salão Sirlei</a>
+    <button class="nav-toggle" aria-controls="menu" aria-expanded="false">☰</button>
+    <ul id="menu" class="nav-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="services.html">Serviços</a></li>
+      <li><a href="agendar.html">Agendar</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Painel Administrativo</h1>
+    <p>Lista de agendamentos salvos no navegador (localStorage).</p>
+
+    <section id="bookingsArea" class="bookings-area" aria-live="polite"></section>
+
+    <div class="admin-actions">
+      <button class="btn" onclick="exportBookings()">Exportar JSON</button>
+      <button class="btn-outline" onclick="clearAllBookings()">Limpar tudo</button>
+    </div>
+    <pre id="exportArea" class="export-area" style="display:none;"></pre>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Salão Sirlei</strong><br>
+      Rua Exemplo, 123 — Centro<br>
+      CEP 00000-000 — Cidade/UF
+    </div>
+    <div>
+      <small>© 2025 Salão Sirlei</small>
+    </div>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
