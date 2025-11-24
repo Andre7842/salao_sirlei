@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salão Sirlei</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Sirlei</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <img src="assets/hero.jpg" class="hero-img" alt="Salão Sirlei" />
-    <div class="hero-overlay">
-      <h1>Salão Sirlei</h1>
-      <h2>Beleza, estilo e cuidado</h2>
-      <p>Agende seu horário hoje mesmo</p>
-      <a href="#agendar" class="btn">Agendar</a>
-    </div>
-  </header>
+    <header>
+        <h1>Salão Sirlei</h1>
+        <p>Beleza • Estilo • Profissionalismo</p>
+    </header>
 
-  <main class="container">
-    <section class="info">
-      <h2>Sobre nós</h2>
-      <p>Tratamentos profissionais de beleza para realçar o seu estilo.</p>
-    </section>
+    <main>
+        <section class="agendamento">
+            <h2>Agende Seu Horário</h2>
+            <input type="text" id="nome" placeholder="Seu nome">
+            <input type="datetime-local" id="data">
+            <button onclick="agendar()">Agendar</button>
+            <p id="retorno"></p>
+        </section>
+    </main>
 
-    <section id="agendar" class="contact">
-      <h2>Agendar horário</h2>
-      <form id="form-agendar">
-        <label>Nome</label>
-        <input type="text" id="nome" required />
+    <footer>
+        <p>© 2025 Salão Sirlei — Todos os direitos reservados.</p>
+    </footer>
 
-        <label>Data</label>
-        <input type="date" id="data" required />
-
-        <label>Serviço desejado</label>
-        <input type="text" id="servico" required />
-
-        <button class="btn" type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Salão Sirlei
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
